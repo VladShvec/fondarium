@@ -43,6 +43,7 @@ class UserFactory extends Factory
         return [
             'role_id' => 2,
             'name' => fake()->name(),
+            'email' => fake()->email(),
             'password' => Hash::make('password')
         ];
     }
