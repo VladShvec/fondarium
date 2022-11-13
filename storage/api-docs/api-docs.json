@@ -1,0 +1,622 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Fondarium test tast api documentation",
+        "description": "Fondarium test tast",
+        "contact": {
+            "email": "vladshvec7@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/admin": {
+            "get": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Get all users with cars",
+                "description": "Multiple status values can be provided with comma separated string",
+                "operationId": "indexAdmin",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/api/admin/create-users": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Create user",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "createAdminUser",
+                "requestBody": {
+                    "description": "Create user object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "role_id",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "email",
+                                        "format": "text",
+                                        "example": "mercedes68@example.org"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "role_id": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "2"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Andrey"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/admin/create-autos": {
+            "post": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Create car",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "createAdminCar",
+                "requestBody": {
+                    "description": "Create car object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "auto_mark",
+                                    "auto_number",
+                                    "auto_color",
+                                    "user_id"
+                                ],
+                                "properties": {
+                                    "auto_mark": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Volkswagen"
+                                    },
+                                    "auto_number": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "user_id": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "4"
+                                    },
+                                    "auto_color": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "DarkRed"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/admin/update-users": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Update user",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "updateAdminUser",
+                "requestBody": {
+                    "description": "Update user object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "email": {
+                                        "type": "email",
+                                        "format": "text",
+                                        "example": "testmail@example.org"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "role_id": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "2"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Andrey"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/admin/update-autos": {
+            "put": {
+                "tags": [
+                    "Admin"
+                ],
+                "summary": "Update car",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "updateAdminCar",
+                "requestBody": {
+                    "description": "Update car object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "auto_mark",
+                                    "auto_number",
+                                    "auto_color"
+                                ],
+                                "properties": {
+                                    "auto_mark": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Volkswagen"
+                                    },
+                                    "auto_number": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "auto_color": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "DarkRed"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/auth/login": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Login",
+                "description": "Do Login",
+                "operationId": "login",
+                "requestBody": {
+                    "description": "Create user object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "email",
+                                        "format": "text",
+                                        "example": "mercedes68@example.org"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/api/auth/me": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Get current user for REST API",
+                "description": "Multiple status values can be provided with comma separated string",
+                "operationId": "me",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            }
+        },
+        "/api/auth/logout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "logout",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/auth/refresh": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "Logout",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "refresh",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/autos": {
+            "get": {
+                "tags": [
+                    "Autos"
+                ],
+                "summary": "Get all cars for REST API",
+                "description": "Multiple status values can be provided with comma separated string",
+                "operationId": "indexCar",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Autos"
+                ],
+                "summary": "Update car",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "updateCar",
+                "requestBody": {
+                    "description": "Update car object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "auto_mark",
+                                    "auto_number",
+                                    "auto_color"
+                                ],
+                                "properties": {
+                                    "auto_mark": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Volkswagen"
+                                    },
+                                    "auto_number": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "auto_color": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "DarkRed"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Autos"
+                ],
+                "summary": "Create car",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "createCar",
+                "requestBody": {
+                    "description": "Create car object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "auto_mark",
+                                    "auto_number",
+                                    "auto_color"
+                                ],
+                                "properties": {
+                                    "auto_mark": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Volkswagen"
+                                    },
+                                    "auto_number": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "auto_color": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "DarkRed"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/autos/{id}": {
+            "delete": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Delete user",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "delete",
+                "parameters": [
+                    {
+                        "name": "User id",
+                        "in": "path",
+                        "description": "User id to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Get all users for REST API",
+                "description": "Multiple status values can be provided with comma separated string",
+                "operationId": "index",
+                "parameters": [
+                    {
+                        "name": "perPage",
+                        "in": "query",
+                        "description": "Per page count",
+                        "required": false,
+                        "explode": true,
+                        "schema": {
+                            "type": "integer",
+                            "default": "10"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid status value"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Update user",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "update",
+                "requestBody": {
+                    "description": "Update user object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "role_id",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "email",
+                                        "format": "text",
+                                        "example": "testmail@example.org"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "role_id": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "2"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Andrey"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Create user",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "create",
+                "requestBody": {
+                    "description": "Create user object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "role_id",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "email",
+                                        "format": "text",
+                                        "example": "mercedes68@example.org"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "123456"
+                                    },
+                                    "role_id": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "2"
+                                    },
+                                    "name": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "Andrey"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/api/users/{id}": {
+            "delete": {
+                "tags": [
+                    "Autos"
+                ],
+                "summary": "Delete user",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "deleteCar",
+                "parameters": [
+                    {
+                        "name": "Car id",
+                        "in": "path",
+                        "description": "Car id to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    }
+}
